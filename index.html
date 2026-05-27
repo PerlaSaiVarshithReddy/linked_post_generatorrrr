@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LinkedIn Post Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace">
+        <div class="panel input-panel">
+          <div class="brand-row">
+            <div>
+              <p class="eyebrow">Creator Tool</p>
+              <h1>LinkedIn Post Generator</h1>
+            </div>
+            <button class="icon-button" id="resetButton" type="button" title="Reset">
+              &#8635;
+            </button>
+          </div>
+
+          <label for="topic">Post topic</label>
+          <textarea
+            id="topic"
+            rows="4"
+            placeholder="Example: I learned how to stay consistent while building my first SaaS product."
+          ></textarea>
+
+          <div class="field-grid">
+            <div>
+              <label for="audience">Audience</label>
+              <input id="audience" type="text" placeholder="Founders, students, recruiters..." />
+            </div>
+            <div>
+              <label for="cta">Call to action</label>
+              <input id="cta" type="text" placeholder="Ask a question, invite DMs..." />
+            </div>
+          </div>
+
+          <div class="control-group">
+            <span class="control-label">Tone</span>
+            <div class="segmented" id="toneGroup">
+              <button type="button" data-value="professional" class="active">Professional</button>
+              <button type="button" data-value="story">Story</button>
+              <button type="button" data-value="bold">Bold</button>
+              <button type="button" data-value="friendly">Friendly</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <span class="control-label">Format</span>
+            <div class="segmented" id="formatGroup">
+              <button type="button" data-value="insight" class="active">Insight</button>
+              <button type="button" data-value="list">List</button>
+              <button type="button" data-value="lesson">Lesson</button>
+              <button type="button" data-value="announcement">Launch</button>
+            </div>
+          </div>
+
+          <div class="range-row">
+            <label for="length">Length</label>
+            <span id="lengthValue">Medium</span>
+          </div>
+          <input id="length" type="range" min="1" max="3" value="2" />
+
+          <div class="checkbox-row">
+            <label>
+              <input id="includeEmoji" type="checkbox" checked />
+              Add subtle emoji
+            </label>
+            <label>
+              <input id="includeHashtags" type="checkbox" checked />
+              Add hashtags
+            </label>
+          </div>
+
+          <button class="primary-button" id="generateButton" type="button">
+            Generate Post
+          </button>
+        </div>
+
+        <div class="panel output-panel">
+          <div class="output-header">
+            <div>
+              <p class="eyebrow">Draft</p>
+              <h2>Your LinkedIn post</h2>
+            </div>
+            <div class="action-row">
+              <button class="small-button" id="copyButton" type="button">Copy</button>
+              <button class="small-button" id="downloadButton" type="button">Download</button>
+            </div>
+          </div>
+
+          <article class="post-preview" id="postPreview">
+            <p class="empty-state">Add a topic and generate your first post.</p>
+          </article>
+
+          <div class="metrics">
+            <div>
+              <span id="wordCount">0</span>
+              <p>words</p>
+            </div>
+            <div>
+              <span id="charCount">0</span>
+              <p>characters</p>
+            </div>
+            <div>
+              <span id="hashtagCount">0</span>
+              <p>hashtags</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
